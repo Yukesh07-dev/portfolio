@@ -1,6 +1,3 @@
-// ==========================================
-// Ultra-Premium Portfolio JavaScript
-// ==========================================
 
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
@@ -148,94 +145,59 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Cursor Effect (Premium Touch)
-const cursor = document.createElement('div');
-cursor.classList.add('custom-cursor');
-document.body.appendChild(cursor);
+// ================================
+// Minimal Premium Cursor
+// ================================
 
-const cursorFollower = document.createElement('div');
-cursorFollower.classList.add('cursor-follower');
-document.body.appendChild(cursorFollower);
+const dot = document.createElement("div");
+dot.className = "cursor-dot";
+document.body.appendChild(dot);
 
-let mouseX = 0;
-let mouseY = 0;
-let followerX = 0;
-let followerY = 0;
+const glow = document.createElement("div");
+glow.className = "cursor-glow";
+document.body.appendChild(glow);
 
-document.addEventListener('mousemove', (e) => {
+let mouseX = 0, mouseY = 0;
+let glowX = 0, glowY = 0;
+
+document.addEventListener("mousemove", e => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
+
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
 });
 
-// Smooth cursor follower animation
-const animateCursorFollower = () => {
-    const diffX = mouseX - followerX;
-    const diffY = mouseY - followerY;
-    
-    followerX += diffX * 0.1;
-    followerY += diffY * 0.1;
-    
-    cursorFollower.style.left = followerX + 'px';
-    cursorFollower.style.top = followerY + 'px';
-    
-    requestAnimationFrame(animateCursorFollower);
-};
+function animateGlow() {
+    glowX += (mouseX - glowX) * 0.12;
+    glowY += (mouseY - glowY) * 0.12;
 
-animateCursorFollower();
+    glow.style.left = glowX + "px";
+    glow.style.top = glowY + "px";
 
-// Add hover effects to interactive elements
-const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-category');
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(1.5)';
-        cursorFollower.style.transform = 'scale(1.5)';
+    requestAnimationFrame(animateGlow);
+}
+animateGlow();
+
+// hover grow effect
+document.querySelectorAll("a, button, input, textarea").forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        dot.style.transform = "translate(-50%, -50%) scale(1.6)";
+        glow.style.transform = "translate(-50%, -50%) scale(1.3)";
     });
-    
-    el.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursorFollower.style.transform = 'scale(1)';
+
+    el.addEventListener("mouseleave", () => {
+        dot.style.transform = "translate(-50%, -50%) scale(1)";
+        glow.style.transform = "translate(-50%, -50%) scale(1)";
     });
 });
 
-// Add custom cursor styles
-const cursorStyles = document.createElement('style');
-cursorStyles.textContent = `
-    .custom-cursor {
-        width: 10px;
-        height: 10px;
-        background: #d4af37;
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition: transform 0.2s ease;
-        mix-blend-mode: difference;
-    }
-    
-    .cursor-follower {
-        width: 40px;
-        height: 40px;
-        border: 2px solid #d4af37;
-        border-radius: 50%;
-        position: fixed;
-        pointer-events: none;
-        z-index: 9998;
-        transform: translate(-50%, -50%);
-        transition: transform 0.2s ease;
-        opacity: 0.5;
-    }
-    
-    @media (max-width: 768px) {
-        .custom-cursor,
-        .cursor-follower {
-            display: none;
-        }
-    }
-`;
-document.head.appendChild(cursorStyles);
+// hide on mobile
+if (window.innerWidth < 768) {
+    dot.style.display = "none";
+    glow.style.display = "none";
+}
+
 
 // Loading Animation
 window.addEventListener('load', () => {
