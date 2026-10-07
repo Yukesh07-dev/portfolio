@@ -311,7 +311,7 @@ a {
 .project-img-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9.5;
+  aspect-ratio: 16 / 8.2;
   overflow: hidden;
   background: var(--bg-secondary);
 }
