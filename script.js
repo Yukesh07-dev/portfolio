@@ -212,22 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><strong>Payments (Stripe):</strong> Secure checkout sessions with webhook verification.</li>
         </ul>
       `
-    },
-
-    'spring-boot-ngo': {
-      id: 'spring-boot-ngo',
-      title: 'Architecting Enterprise Java Spring Boot Backends with Cloud MySQL',
-      date: 'June 2026',
-      readTime: '7 min read',
-      category: 'Java & Cloud',
-      coverImg: './assets/ngo_connect.png',
-      excerpt: 'Lessons learned building an NGO event and donation portal deployed across Netlify, Render, Aiven MySQL, and Razorpay API.',
-      content: `
-        <p class="mb-6 leading-relaxed">For applications handling financial transactions and volunteer registrations, Java Spring Boot provides unmatched type-safety, dependency injection, and enterprise reliability.</p>
-
-        <h3 class="text-2xl font-bold mb-4 font-heading text-primary">Distributed Deployment Pipeline</h3>
-        <p class="mb-6 leading-relaxed">By hosting the frontend on Netlify, backend REST APIs on Render, and MySQL on Aiven cloud cluster, the system maintains 99.9% uptime while handling Razorpay transaction webhooks effortlessly.</p>
-      `
     }
   };
 
