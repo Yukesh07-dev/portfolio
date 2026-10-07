@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
       links: [
         { label: 'View IEEE Xplore Publication', url: 'https://ieeexplore.ieee.org/document/11453967' }
       ],
-      nextId: 'deep-taxonomy'
+      nextId: 'ngo-platform'
     },
 
     'deep-taxonomy': {
@@ -132,11 +132,40 @@ document.addEventListener('DOMContentLoaded', () => {
         { label: 'Live Application (Streamlit)', url: 'https://taxonomyclassifcation.streamlit.app/' },
         { label: 'GitHub Repository', url: 'https://github.com/Yukesh07-dev' }
       ],
-      nextId: 'ngo-platform'
+      nextId: 'food-delivery'
     }
   };
 
   const BLOG_ARTICLES = {
+    'taxonomy-app': {
+      id: 'taxonomy-app',
+      title: 'AvianVision: Deep Learning Taxonomy Classification & Grad-CAM Interpretability',
+      date: 'Final Year Project 2026',
+      readTime: '4 min read',
+      category: 'AI / ML • Streamlit App',
+      coverImg: './assets/bird_species_predictor.png?v=2',
+      excerpt: 'An explainable Indian bird species identification system powered by a fine-tuned ResNet-50 deep learning model with 97.72% validation accuracy and Grad-CAM interpretability.',
+      content: `
+        <p class="mb-6 leading-relaxed">Automated biodiversity classification requires both high accuracy and model transparency. <strong>AvianVision</strong> is an explainable Indian bird species identification system powered by a Fine-Tuned ResNet-50 deep learning model, integrated with Grad-CAM visual explanations and offline species knowledge systems.</p>
+        
+        <h3 class="text-2xl font-bold mb-4 font-heading text-primary">System Highlights & Key Metrics</h3>
+        <ul class="list-disc list-inside space-y-3 mb-6 text-secondary">
+          <li><strong>Validation Accuracy:</strong> 97.72% achieved across 15 species.</li>
+          <li><strong>Explainability Engine:</strong> Grad-CAM heatmap overlays visualizing feature maps driving predictions.</li>
+          <li><strong>Interactive Streamlit Dashboard:</strong> Deployed live for instant photograph upload and real-world robustness evaluation.</li>
+        </ul>
+
+        <blockquote class="my-8 p-6 border-l-4 border-accent bg-secondary rounded-r-lg italic text-lg text-primary">
+          "Integrated PyTorch transfer learning with Grad-CAM visual interpretability to deliver real-time taxonomic reports for ecological research."
+        </blockquote>
+
+        <h3 class="text-2xl font-bold mb-4 font-heading text-primary">Live Application</h3>
+        <p class="mb-4 text-secondary">
+          <strong>Streamlit App:</strong> <a href="https://taxonomyclassifcation.streamlit.app/" target="_blank" rel="noopener noreferrer" class="text-accent underline font-semibold">https://taxonomyclassifcation.streamlit.app/ ↗</a>
+        </p>
+      `
+    },
+
     'ieee-paper': {
       id: 'ieee-paper',
       title: 'Deep Learning-Based Bird Species Classification Using ResNet-50 (IEEE Research Summary)',
