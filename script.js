@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       role: 'Machine Learning Developer',
       duration: '2 Months',
       tech: ['Python', 'TensorFlow', 'ResNet-50', 'OpenCV', 'Pandas', 'NumPy'],
-      heroImg: './assets/bird_species_predictor.png',
+      heroImg: './assets/bird_species_predictor.png?v=2',
       overview: 'Developed a computer vision system to automate biological taxonomy classification from image datasets, reducing manual classification time for researchers.',
       challenge: 'Handling imbalanced image classes and subtle feature variations across biological sub-species.',
       solution: 'Applied class weighting, transfer learning, and feature map visualizations to verify model focus on key morphological traits.',
