@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Accuracy Tuning & Feature Extraction Analysis'
       ],
       links: [
+        { label: 'Live Application (Streamlit)', url: 'https://taxonomyclassifcation.streamlit.app/' },
         { label: 'GitHub Repository', url: 'https://github.com/Yukesh07-dev' }
       ],
       nextId: 'ngo-platform'
